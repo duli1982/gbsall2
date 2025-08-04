@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sessionContainer.innerHTML = '';
         } else {
             const sessionPath = pageId.replace('session-', '').replace('-page', '');
-            const filePath = `sessions/${sessionPath.replace('-','.')}.html`;
+            const filePath = `sessions/${sessionPath}.html`;
 
             fetch(filePath)
                 .then(response => {
