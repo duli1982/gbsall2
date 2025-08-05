@@ -117,23 +117,7 @@
 
     <!-- =========== HOMEPAGE VIEW =========== -->
     <div id="homepage-view" class="fade-in">
-        <header class="text-center py-12 px-4 relative">
-            <a href="/" class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-medium text-blue-600 hover:text-blue-800">&larr; Back to Hub</a>
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight main-heading">Gemini Prompt Library</h1>
-            <p id="hero-subtitle" class="max-w-2xl mx-auto text-lg text-gray-500 mt-4">
-                Discover a curated collection of prompts to help you unlock the full potential of Gemini.
-            </p>
-            <div class="max-w-2xl mx-auto text-lg text-gray-500 mt-4">
-                How To Use:
-                <span id="animated-subtitle" class="font-semibold text-[#4A90E2] inline-block"></span>
-            </div>
-            <div class="mt-8 max-w-xl mx-auto relative">
-                <input type="text" id="homepage-search" placeholder="🔍 Search for prompts..." class="w-full p-3 border border-gray-300 rounded-lg text-lg pr-10">
-                <button id="clear-search-btn" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700">
-                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-        </header>
+        <header id="header-placeholder" class="text-center py-12 px-4 relative"></header>
         <main class="container mx-auto px-4 sm:px-6 lg:px-8 pb-16">
             <div id="loading-indicator" class="hidden text-center p-8">
                 <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
@@ -184,6 +168,7 @@
     </div>
 
 
+    <script src="/js/main.js"></script>
     <script type="module">
         // --- DATA STRUCTURE ---
         let promptData = {};
