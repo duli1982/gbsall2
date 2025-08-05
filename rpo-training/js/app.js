@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function navigateTo(pageId) {
+        if (pageId !== 'main-page') {
+            sessionStorage.setItem('scrollPosition', window.scrollY);
+        }
+
         // Hide all pages by default
         mainPage.classList.remove('active');
         sessionContainer.classList.remove('active');
@@ -29,9 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pageId === 'main-page') {
             mainPage.classList.add('active');
             sessionContainer.innerHTML = '';
+            const savedPosition = sessionStorage.getItem('scrollPosition');
+            if (savedPosition) {
+                window.scrollTo(0, parseInt(savedPosition, 10));
+                sessionStorage.removeItem('scrollPosition');
+            }
         } else {
             const sessionPath = pageId.replace('session-', '').replace('-page', '');
-            const filePath = `sessions/${sessionPath.replace('-','.')}.html`;
+            const filePath = `sessions/${sessionPath}.html`;
 
             fetch(filePath)
                 .then(response => {
@@ -57,7 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         headerTitle.textContent = pageTitles[pageId] || pageTitles['main-page'];
-        window.scrollTo(0, 0);
+        if (pageId !== 'main-page') {
+            window.scrollTo(0, 0);
+        }
     }
 
     // Make navigateTo globally accessible
