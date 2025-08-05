@@ -117,7 +117,8 @@
 
     <!-- =========== HOMEPAGE VIEW =========== -->
     <div id="homepage-view" class="fade-in">
-        <header class="text-center py-12 px-4">
+        <header class="text-center py-12 px-4 relative">
+            <a href="/" class="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-medium text-blue-600 hover:text-blue-800">&larr; Back to Hub</a>
             <h1 class="text-4xl md:text-5xl font-bold tracking-tight main-heading">Gemini Prompt Library</h1>
             <p id="hero-subtitle" class="max-w-2xl mx-auto text-lg text-gray-500 mt-4">
                 Discover a curated collection of prompts to help you unlock the full potential of Gemini.
@@ -171,7 +172,10 @@
             <!-- Main Content (Left Side) -->
             <main class="w-3/4 pr-4">
                 <div class="p-6 md:p-8">
-                    <button id="back-to-home-btn" class="text-gray-500 hover:text-black mb-8">&larr; Back to All Categories</button>
+                    <div class="flex justify-between items-center mb-8">
+                        <button id="back-to-home-btn" class="text-gray-500 hover:text-black">&larr; Back to All Categories</button>
+                        <a href="/" class="text-sm font-medium text-blue-600 hover:text-blue-800">&larr; Back to Hub</a>
+                    </div>
                     <!-- Prompt content will be injected here by JavaScript -->
                     <div id="prompt-display-area"></div>
                 </div>
